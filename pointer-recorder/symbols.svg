@@ -1,0 +1,29 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        
+        <symbol id="icon-play" viewBox="0 0 32 32">
+            
+        <title>play</title>
+        <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z"></path>
+        <path d="M12 9l12 7-12 7z"></path>
+        </symbol>
+        
+        <symbol id="icon-pause" viewBox="0 0 32 32">
+        <title>pause</title>
+        <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM10 10h4v12h-4zM18 10h4v12h-4z"></path>
+        </symbol>
+        
+        <symbol id="icon-record" viewBox="0 0 32 32">
+        <title>record</title>
+        <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z"></path>
+        <circle class="inner" cx="16" cy="16" r="7"/>
+        </symbol>
+        
+        <symbol id="icon-stop" viewBox="0 0 32 32">
+        <title>stop</title>
+        <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z"></path>
+        <path d="M10 10h12v12h-12z"></path>
+        </symbol>
+        
+    </defs>
+</svg>
