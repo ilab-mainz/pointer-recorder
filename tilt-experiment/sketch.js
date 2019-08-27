@@ -6,19 +6,28 @@ let penTiltAngle = 0;
 let penRotationAngle = 0;
 let penLength = 400;
 let penPressure = 1.0;
+let penIsDown = false;
 
 let canvas;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.elt.addEventListener("pointermove", pointerMoved);
+  canvas.elt.addEventListener("pointerdown", pointerDown);
+  canvas.elt.addEventListener("pointerup", pointerUp);
+  noCursor();
 }
 
 function draw() {
+
   background(220);
   stroke(0);
-  cross(penX, penY, 100, 100);
-  drawShadow();
+
+  if(penIsDown) {
+    cross(penX, penY, 100, 100);
+    drawShadow();
+  }
+
 }
 
 function drawShadow() {
@@ -40,9 +49,26 @@ function pointerMoved(evt) {
   if (evt.pointerType === 'pen') penMoved(evt);
 }
 
+function pointerDown(evt) {
+  if (evt.pointerType === 'pen') penDown(evt);
+}
+
+function pointerUp(evt) {
+  if (evt.pointerType === 'pen') penUp(evt);
+}
+
+function penDown() {
+  penIsDown = true;
+}
+
+function penUp() {
+  penIsDown = false;
+}
+
 function penMoved(evt) {
   getPenPos(evt);
   getPenAngles(evt);
+  getPenPressure(evt);
 }
 
 function getPenPos(evt) {
@@ -59,10 +85,10 @@ function getPenAngles(evt) {
   let a = tan(penTiltY);
   let b = tan(penTiltX);
   penTiltAngle = atan(sqrt(a * a + b * b));
-  penRotationAngle = atan2(a, b);
+  penRotationAngle = - atan2(a, b);
 }
 
 function getPenPressure(evt) {
   let {pressure} = evt;
-  console.log(pressure);
+  console.log('pressure', pressure);
 }
