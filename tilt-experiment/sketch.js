@@ -7,14 +7,19 @@ let penRotationAngle = 0;
 let penLength = 400;
 let penPressure = 1.0;
 let penIsDown = false;
+let mouseInside = false;
 
 let canvas;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
+  // add pen events
   canvas.elt.addEventListener("pointermove", pointerMoved);
   canvas.elt.addEventListener("pointerdown", pointerDown);
   canvas.elt.addEventListener("pointerup", pointerUp);
+  // add mouse events
+  canvas.elt.addEventListener("mouseenter", mouseEnter);
+  canvas.elt.addEventListener("mouseleave", mouseLeave);
   noCursor();
 }
 
@@ -23,9 +28,15 @@ function draw() {
   background(220);
   stroke(0);
 
+  // pen cursor ...
   if(penIsDown) {
     cross(penX, penY, 100, 100);
     drawShadow();
+  }
+
+  // mouse cursor
+  if(mouseInside) {
+    cross(mouseX, mouseY, 100, 100);
   }
 
 }
@@ -91,4 +102,12 @@ function getPenAngles(evt) {
 function getPenPressure(evt) {
   let {pressure} = evt;
   console.log('pressure', pressure);
+}
+
+function mouseEnter() {
+  mouseInside = true;
+}
+
+function mouseLeave() {
+  mouseInside = false;
 }
